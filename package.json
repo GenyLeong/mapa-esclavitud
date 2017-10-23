@@ -1,0 +1,54 @@
+{
+  "name": "sigoaqui",
+  "version": "1.0.0",
+  "description": "Especial prueba La Republica",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-connect": "^5.0.0",
+    "gulp-csvtojson": "^0.2.0",
+    "gulp-install": "^1.1.0",
+    "materialize": "^1.0.0",
+    "materialize-css": "^0.98.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "del": "^2.2.2",
+    "fs-extra": "^0.30.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^2.4.0",
+    "gulp-compass": "^2.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect-php": "^1.0.1",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.1.2",
+    "gulp-watch": "^4.3.11",
+    "jshint": "^2.9.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GenyLeong/sigoaqui.git"
+  },
+  "keywords": [
+    "niunamenos",
+    "feminicidio"
+  ],
+  "author": "GenyLeong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GenyLeong/sigoaqui/issues"
+  },
+  "homepage": "https://github.com/GenyLeong/sigoaqui#readme"
+}

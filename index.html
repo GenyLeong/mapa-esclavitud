@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.3, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="http://cdn8.larepublica.pe/sites/all/themes/larepublica_zen/favicon.ico" type="image/vnd.microsoft.icon"/>
+  <meta name="theme-color" content="#E00109"/>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Document</title>
+  <!-- <script src="//d3js.org/d3.v3.min.js"></script> -->
+  <link rel="stylesheet" href="https://naver.github.io/billboard.js/release/latest/dist/billboard.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Montserrat" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.6.0/d3.min.js"></script>
+  <script src="https://naver.github.io/billboard.js/release/latest/dist/billboard.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="scrollbar" id="style-1">
+        <div class="force-overflow">
+            <h1 class="title">Esclavitud moderna en Latinoamérica</h1>
+            <ul>
+              <a href="#vulnerabilidad" class="smooth"><li id="VDPYS">Vulnerabilidad de derechos y seguridad<span><i class='fa fa-info-circle' aria-hidden='true' style='margin-left:4px'></i></span></li></a>
+              <a href="#poblacion" class="smooth"><li id="PME">Población estimada en esclavitud moderna<span><i class='fa fa-info-circle' aria-hidden='true' style='margin-left:4px'></i></span></li></a>
+              <a href="#reporte" class="smooth"><li id ="RDJ">Responsabilidad de la justicia<span><i class='fa fa-info-circle' aria-hidden='true' style='margin-left:4px'></i></span></li></a>
+              <a href="#reporte" class="smooth"><li id="RM">Perfil de <br> víctimas de trata<span><i class='fa fa-info-circle' aria-hidden='true' style='margin-left:4px'></i></span></li></a>
+              <br>
+              <p id="only-start">Haga click al país para ver</p>
+            </ul>
+              <p class="reporte-vdpys" id="vulnerabilidad"><span><i class='fa fa-info-circle' aria-hidden='true' style='margin-right:7px'></i></span>Realizado con el <a href='../indice_global.xlsx' target='_blank' download> último reporte de WFF </a>. Esta dimensión abarca medidas de confianza en el sistema judicial, inestabilidad política, acceso a las armas, derechos sexuales, respuestas del gobierno a la esclavitud, derechos políticos y libertades civiles.</p>
+              <p class="reporte-pme" id="poblacion"><span><i class='fa fa-info-circle' aria-hidden='true' style='margin-right:7px'></i></span>Realizado con el <a href='../indice_global.xlsx' target='_blank' download> último reporte de WFF </a>. Para obtener el aproximado, en total, se utilizaron 28 puntos de datos, 25 de las encuestas WFF, dos derivadas de la aplicación de la estimación de múltiples sistemas, y una encuesta en la RDC, como base para extrapolar al resto de los países.</p>
+
+            <div id="reporte">
+            </div>
+            <div id="reporte-add">
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- <iframe class="resize" frameborder="0" height="800px" scrolling="yes" src="http://genesis.leon.gitlab.io/mapa-esclavitud/" style="min-height: 400px !important; overflow: hidden; height: 800px;" width="100%" id="iFrameResizer0"></iframe> -->
+
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
