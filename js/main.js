@@ -138,7 +138,7 @@ $(document).ready(function() {
                   var chart = bubbleChart().width(width).height(400);
                   console.log(width)
                   if(width<768){
-                    var chart = bubbleChart().width(width-50).height(350);
+                    var chart = bubbleChart().width(width-30).height(350);
                   }
                   d3.select('#chart').data(data).call(chart);
               });
