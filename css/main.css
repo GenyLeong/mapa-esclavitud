@@ -19,6 +19,7 @@ html{
 .force-overflow
 {
 	min-height: 800px;
+  padding: 1rem;
 }
 
 #style-1::-webkit-scrollbar-track
