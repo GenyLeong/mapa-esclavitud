@@ -38,7 +38,7 @@ $(document).ready(function() {
               if (width<768) {
                 var vis_scale_ppme = d3.scaleLinear()
                       .domain([Math.round(d3.min(json, function(d) { return d.PPME*2; })), Math.round(d3.max(json, function(d) { return d.PPME*2; }))])
-                      .range([20, 100]);
+                      .range([15, 80]);
               }
 
               var vis_scale_pob = d3.scaleLinear()
@@ -111,7 +111,7 @@ $(document).ready(function() {
                   $('#reporte-add').html("").css({
                     "position": "absolute",
                     "float": "none",
-                    "width":"300px",
+                    "width":"277px",
                     "zIndex": "9999",
                     "transform": "translate(-50%, -50%)",
                     "top": height/2 + 100,
@@ -135,10 +135,10 @@ $(document).ready(function() {
 
 
               d3.json("./data/esclavitud.json", function(data) {
-                  var chart = bubbleChart().width(width/2-150).height(400);
+                  var chart = bubbleChart().width(width).height(400);
                   console.log(width)
                   if(width<768){
-                    var chart = bubbleChart().width(width).height(350);
+                    var chart = bubbleChart().width(width-50).height(350);
                   }
                   d3.select('#chart').data(data).call(chart);
               });
@@ -276,9 +276,12 @@ $(document).ready(function() {
               if (width<768){
                 $('#reporte').css({
                   "float": "left",
-                  "left": "-1%"
+                  "left": "0%"
                 });
-                $("#reporte-add").css("transform", "none")
+                $("#reporte-add").css({
+                  "transform": "none",
+                  "width": "50%"
+                })
               }
 
               var p = d3.select('#reporte')
@@ -341,6 +344,7 @@ $(document).ready(function() {
                   if(width<500) {
                       p
                       .style("top", "54px")
+                      .style("left", "0rem")
                   }
 
                     vis = p
@@ -398,7 +402,7 @@ $(document).ready(function() {
 
                   $("#reporte-add").css({
                   "position": "relative",
-                  "width": "300px",
+                  "width": "277px",
                   "zIndex": "9999",
                   "top": "-20px",
                   "left": "0px",
@@ -556,7 +560,7 @@ $(document).ready(function() {
                   show:false
                 },
                 "title": "Perú (2014)",
-                "width": 21,
+                "width": 20,
                 expand: true
               },
               "bindto": "#chart_c1"
@@ -614,7 +618,7 @@ $(document).ready(function() {
               },
               "donut": {
                 "title": "Argentina (2015)",
-                "width": 21,
+                "width": 20,
                 "label":{
                   show: false
                 }
@@ -644,7 +648,7 @@ $(document).ready(function() {
               },
               "donut": {
                 "title": "Jamaica (2013)",
-                "width": 21,
+                "width": 20,
                 "label":{
                   show: false
                 }
@@ -674,7 +678,7 @@ $(document).ready(function() {
               },
               "donut": {
                 "title": "Mexico (2015)",
-                "width": 21,
+                "width": 20,
                 "label":{
                   show: false
                 }
@@ -710,7 +714,7 @@ $(document).ready(function() {
               },
               "donut": {
                 "title": "Costa Rica (2015)",
-                "width": 21,
+                "width": 20,
                 "label":{
                   show: false
                 }
@@ -740,7 +744,7 @@ $(document).ready(function() {
               },
               "donut": {
                 "title": "Chile (2014)",
-                "width": 21,
+                "width": 20,
                 "label":{
                   show: false
                 }
@@ -772,7 +776,7 @@ $(document).ready(function() {
             },
             "donut": {
               "title": "Paraguay (2015)",
-              "width": 21,
+              "width": 20,
               "label":{
                 show: false
               }
@@ -806,7 +810,7 @@ $(document).ready(function() {
             },
             "donut": {
               "title": "Ecuador (2015)",
-              "width": 21,
+              "width": 20,
               "label":{
                 show: false
               }
@@ -836,7 +840,7 @@ $(document).ready(function() {
               },
               "donut": {
                 "title": "Panamá (2015)",
-                "width": 21,
+                "width": 20,
                 "label":{
                   show: false
                 }
@@ -866,7 +870,7 @@ $(document).ready(function() {
               },
               "donut": {
                 "title": "El Salvador (2015)",
-                "width": 21,
+                "width": 20,
                 "label":{
                   show: false
                 }
@@ -897,7 +901,7 @@ $(document).ready(function() {
             },
             "donut": {
               "title": "Bárbados (2013)",
-              "width": 21,
+              "width": 20,
               "label":{
                 show: false
               }
@@ -927,7 +931,7 @@ $(document).ready(function() {
               },
               "donut": {
                 "title": "Venezuela (2015)",
-                "width": 21,
+                "width": 20,
                 "label":{
                   show: false
                 }
@@ -959,7 +963,7 @@ $(document).ready(function() {
               },
               "donut": {
                 "title": "Cuba (2014)",
-                "width": 21,
+                "width": 20,
                 "label":{
                   show: false
                 }
@@ -989,7 +993,7 @@ $(document).ready(function() {
               },
               "donut": {
                 "title": "Uruguay (2014)",
-                "width": 21,
+                "width": 20,
                 "label":{
                   show: false
                 }
@@ -1021,7 +1025,7 @@ $(document).ready(function() {
               },
               "donut": {
                 "title": "Colombia (2015)",
-                "width": 21,
+                "width": 20,
                 "label":{
                   show: false
                 }
@@ -1055,7 +1059,7 @@ $(document).ready(function() {
               },
               "donut": {
                 "title": "Bolivia (2014)",
-                "width": 21,
+                "width": 20,
                 "label":{
                   show: false
                 }
@@ -1085,7 +1089,7 @@ $(document).ready(function() {
               },
               "donut": {
                 "title": "Trin. y Tobago (2015)",
-                "width": 18,
+                "width": 16,
                 "label":{
                   show: false
                 }
@@ -1115,7 +1119,7 @@ $(document).ready(function() {
             },
             "donut": {
               "title": "Rep. Dominicana (2014)",
-              "width": 18,
+              "width": 16,
               "label":{
                 show: false
               }
