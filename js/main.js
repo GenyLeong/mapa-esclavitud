@@ -45,6 +45,7 @@ $(document).ready(function() {
                     .domain([Math.round(d3.min(json, function(d) { return d.POB; })), Math.round(d3.max(json, function(d) { return d.POB; }))])
                     .range([20, 200]);
 
+
             var vis;
             var p = d3.select('#reporte')
             .append("div")
@@ -536,15 +537,16 @@ $(document).ready(function() {
 
               var chart_c1 = bb.generate({
                 size: {
-
-                  // height: 300
                 },
               "data": {
                 "columns": [
-                    ["Mano de obra", 61]
+                    ["Mano de obra", 61],
+                    ["Explotación sexual", 273],
+                    ["Servidumbre doméstica", 3],
+                    ["Otros fines", 7]
                 ],
                 order : "asc",
-                "type": "donut",
+                "type": "bar",
                 colors: {
                   "Explotación sexual": "#E05D5F",
                   "Mano de obra": "#FE9D65",
@@ -552,54 +554,44 @@ $(document).ready(function() {
                   "Otros fines": "#8EB5CB"
                 }
               },
+              "tooltip": {
+                "grouped": false
+              },
+              axis: {
+                "x": {
+              "type": "category",
+              "categories": ["Perú (2014)"]
+              },
+                y: {
+                  show: false,
+                  max:529,
+                  min:42
+                }
+              },
               legend: {
                 show: false
               },
-              "donut": {
-                "label":{
-                  show:false
-                },
-                "title": "Perú (2014)",
-                "width": 20,
-                expand: true
+              bar: {
+                width:15
               },
+              "interaction": {
+                "inputType": {
+                  "touch": {
+                    "preventDefault": true
+                  }
+                }
+              },
+              // onrendered: function onrendered(){
+              //   d3.select(".bb-axis-x")
+              //     .attr("transform", "translate(0,145)")
+              // },
               "bindto": "#chart_c1"
             });
 
-            setTimeout(function () {
-            	chart_c1.load({
-            		columns: [
-                    ["Explotación sexual", 273]
-            		]
-            	});
-            }, 200);
-
-            setTimeout(function () {
-            	chart_c1.load({
-            		columns: [
-            			["Servidumbre doméstica", 3]
-            		]
-            	});
-            }, 400);
-
-            setTimeout(function () {
-            	chart_c1.load({
-            		columns: [
-            			["Otros fines", 7]
-            		]
-            	});
-            }, 600);
-
-            chart_c1.defocus(["Mano de obra", "Servidumbre doméstica", "Otros fines"]);
-
             document.getElementsByClassName("bb-tooltip-container")[0].innerHTML = "<table class='bb-tooltip'><tbody><tr class='bb-tooltip-name-Explotación-sexual'><td class='name'><span style='background-color:#E05D5F'></span>Explotación sexual</td><td class='value'>79.4%</td></tr></tbody></table>"
-
-            document.getElementsByClassName("bb-tooltip-container")[0].classList.add("tooltip-victimas")
 
             var chart_c2 = bb.generate({
               size: {
-                // width: 280
-                // height: 300
               },
               "data": {
                 "columns": [
@@ -607,20 +599,37 @@ $(document).ready(function() {
                      ["Mano de obra", 138]
                 ],
                 order : "asc",
-                "type": "donut",
+                "type": "bar",
                 colors: {
                   "Explotación sexual": "#E05D5F",
                   "Mano de obra": "#FE9D65"
                 }
               },
+              "tooltip": {
+                "grouped": false
+              },
+              axis: {
+                "x": {
+                  "type": "category",
+                  "categories": ["Argentina (2015)"]
+                },
+                y: {
+                  show: false,
+                  max:529,
+                  min:42
+                }
+              },
               legend: {
                 show: false
               },
-              "donut": {
-                "title": "Argentina (2015)",
-                "width": 20,
-                "label":{
-                  show: false
+              bar: {
+                 width:15
+              },
+              "interaction": {
+                "inputType": {
+                  "touch": {
+                    "preventDefault": true
+                  }
                 }
               },
               "bindto": "#chart_c2"
@@ -628,8 +637,6 @@ $(document).ready(function() {
 
             var chart_c3 = bb.generate({
               size: {
-                // width: 280
-                // height: 300
               },
               "data": {
                 "columns": [
@@ -637,7 +644,7 @@ $(document).ready(function() {
                      ["Mano de obra", 1]
                 ],
                 order : "asc",
-                "type": "donut",
+                "type": "bar",
                 colors: {
                   "Explotación sexual": "#E05D5F",
                   "Mano de obra": "#FE9D65"
@@ -646,11 +653,31 @@ $(document).ready(function() {
               legend: {
                 show: false
               },
-              "donut": {
-                "title": "Jamaica (2013)",
-                "width": 20,
-                "label":{
-                  show: false
+              "tooltip": {
+                "grouped": false
+              },
+              axis: {
+                "x": {
+                  "type": "category",
+                  "categories": ["Jamaica (2013)"]
+                },
+                y: {
+                  show: false,
+                  max:529,
+                  min:42
+                }
+              },
+              legend: {
+                show: false
+              },
+              bar: {
+                 width:15
+              },
+              "interaction": {
+                "inputType": {
+                  "touch": {
+                    "preventDefault": true
+                  }
                 }
               },
               "bindto": "#chart_c3"
@@ -658,8 +685,6 @@ $(document).ready(function() {
 
             var chart_c4 = bb.generate({
               size: {
-                // width: 280
-                // height: 300
               },
               "data": {
                 "columns": [
@@ -667,7 +692,7 @@ $(document).ready(function() {
                      ["Mano de obra", 48]
                 ],
                 order : "asc",
-                "type": "donut",
+                "type": "bar",
                 colors: {
                   "Explotación sexual": "#E05D5F",
                   "Mano de obra": "#FE9D65"
@@ -676,11 +701,31 @@ $(document).ready(function() {
               legend: {
                 show: false
               },
-              "donut": {
-                "title": "Mexico (2015)",
-                "width": 20,
-                "label":{
-                  show: false
+              "tooltip": {
+                "grouped": false
+              },
+              axis: {
+                "x": {
+                  "type": "category",
+                  "categories": ["Mexico (2015)"]
+                },
+                y: {
+                  show: false,
+                  max:529,
+                  min:42
+                }
+              },
+              legend: {
+                show: false
+              },
+              bar: {
+                 width:15
+              },
+              "interaction": {
+                "inputType": {
+                  "touch": {
+                    "preventDefault": true
+                  }
                 }
               },
               "bindto": "#chart_c4"
@@ -688,8 +733,6 @@ $(document).ready(function() {
 
             var chart_c5 = bb.generate({
               size: {
-                // width: 350
-                // height: 300
               },
               "data": {
                 "columns": [
@@ -700,7 +743,7 @@ $(document).ready(function() {
                      ["Otros fines", 1]
                 ],
                 order : "asc",
-                "type": "donut",
+                "type": "bar",
                 colors: {
                   "Explotación sexual": "#E05D5F",
                   "Mano de obra": "#FE9D65",
@@ -712,11 +755,31 @@ $(document).ready(function() {
               legend: {
                 show: false
               },
-              "donut": {
-                "title": "Costa Rica (2015)",
-                "width": 20,
-                "label":{
-                  show: false
+              "tooltip": {
+                "grouped": false
+              },
+              axis: {
+                "x": {
+                  "type": "category",
+                  "categories": ["Costa Rica (2015)"]
+                },
+                y: {
+                  show: false,
+                  max:529,
+                  min:42
+                },
+              },
+              legend: {
+                show: false
+              },
+              bar: {
+                 width:15
+              },
+              "interaction": {
+                "inputType": {
+                  "touch": {
+                    "preventDefault": true
+                  }
                 }
               },
               "bindto": "#chart_c5"
@@ -724,8 +787,6 @@ $(document).ready(function() {
 
             var chart_c6 = bb.generate({
               size: {
-                // width: 280
-                // height: 300
               },
               "data": {
                 "columns": [
@@ -733,7 +794,7 @@ $(document).ready(function() {
                      ["Mano de obra", 134]
                 ],
                 order : "asc",
-                "type": "donut",
+                "type": "bar",
                 colors: {
                   "Explotación sexual": "#E05D5F",
                   "Mano de obra": "#FE9D65"
@@ -742,11 +803,31 @@ $(document).ready(function() {
               legend: {
                 show: false
               },
-              "donut": {
-                "title": "Chile (2014)",
-                "width": 20,
-                "label":{
-                  show: false
+              "tooltip": {
+                "grouped": false
+              },
+              axis: {
+                "x": {
+                  "type": "category",
+                  "categories": ["Chile (2014)"]
+                },
+                y: {
+                  show: false,
+                  max:529,
+                  min:42
+                }
+              },
+              legend: {
+                show: false
+              },
+              bar: {
+                 width:15
+              },
+              "interaction": {
+                "inputType": {
+                  "touch": {
+                    "preventDefault": true
+                  }
                 }
               },
               "bindto": "#chart_c6"
@@ -754,8 +835,6 @@ $(document).ready(function() {
 
             var chart_c7 = bb.generate({
               size: {
-                // width: 280
-                // height: 300
               },
             "data": {
               "columns": [
@@ -763,7 +842,7 @@ $(document).ready(function() {
                    ["Mano de obra", 28]
               ],
               order : "asc",
-              "type": "donut",
+              "type": "bar",
               colors: {
                 "Explotación sexual": "#E05D5F",
                 "Mano de obra": "#FE9D65",
@@ -774,11 +853,31 @@ $(document).ready(function() {
             legend: {
               show: false
             },
-            "donut": {
-              "title": "Paraguay (2015)",
-              "width": 20,
-              "label":{
-                show: false
+            "tooltip": {
+              "grouped": false
+            },
+            axis: {
+              "x": {
+                "type": "category",
+                "categories": ["Paraguay (2015)"]
+              },
+              y: {
+                show: false,
+                max:529,
+                min:42
+              }
+            },
+            legend: {
+              show: false
+            },
+            bar: {
+               width:15
+            },
+            "interaction": {
+              "inputType": {
+                "touch": {
+                  "preventDefault": true
+                }
               }
             },
             "bindto": "#chart_c7"
@@ -786,8 +885,6 @@ $(document).ready(function() {
 
           var chart_c8 = bb.generate({
             size: {
-              // width: 350
-              // height: 300
             },
             "data": {
               "columns": [
@@ -797,7 +894,7 @@ $(document).ready(function() {
                    ["Otros fines", 25]
               ],
               order : "asc",
-              "type": "donut",
+              "type": "bar",
               colors: {
                 "Explotación sexual": "#E05D5F",
                 "Pornografía": "#7a679e",
@@ -808,11 +905,31 @@ $(document).ready(function() {
             legend: {
               show: false
             },
-            "donut": {
-              "title": "Ecuador (2015)",
-              "width": 20,
-              "label":{
-                show: false
+            "tooltip": {
+              "grouped": false
+            },
+            axis: {
+              "x": {
+                "type": "category",
+                "categories": ["Ecuador (2015)"]
+              },
+              y: {
+                show: false,
+                max:529,
+                min:42
+              }
+            },
+            legend: {
+              show: false
+            },
+            bar: {
+               width:15
+            },
+            "interaction": {
+              "inputType": {
+                "touch": {
+                  "preventDefault": true
+                }
               }
             },
             "bindto": "#chart_c8"
@@ -820,8 +937,6 @@ $(document).ready(function() {
 
             var chart_c9 = bb.generate({
               size: {
-                // width: 280
-                // height: 300
               },
               "data": {
                 "columns": [
@@ -829,7 +944,7 @@ $(document).ready(function() {
                      ["Mano de obra", 14]
                 ],
                 order : "asc",
-                "type": "donut",
+                "type": "bar",
                 colors: {
                   "Explotación sexual": "#E05D5F",
                   "Mano de obra": "#FE9D65"
@@ -838,11 +953,31 @@ $(document).ready(function() {
               legend: {
                 show: false
               },
-              "donut": {
-                "title": "Panamá (2015)",
-                "width": 20,
-                "label":{
-                  show: false
+              "tooltip": {
+                "grouped": false
+              },
+              axis: {
+                "x": {
+                  "type": "category",
+                  "categories": ["Panamá (2015)"]
+                },
+                y: {
+                  show: false,
+                  max:529,
+                  min:42
+                }
+              },
+              legend: {
+                show: false
+              },
+              bar: {
+                 width:15
+              },
+              "interaction": {
+                "inputType": {
+                  "touch": {
+                    "preventDefault": true
+                  }
                 }
               },
               "bindto": "#chart_c9"
@@ -850,8 +985,6 @@ $(document).ready(function() {
 
             var chart_c10 = bb.generate({
               size: {
-                // width: 280
-                // height: 300
               },
               "data": {
                 "columns": [
@@ -859,7 +992,7 @@ $(document).ready(function() {
                      ["Tráfico de órganos", 2]
                 ],
                 order : "asc",
-                "type": "donut",
+                "type": "bar",
                 colors: {
                   "Explotación sexual": "#E05D5F",
                   "Tráfico de órganos": "#8DD1A9"
@@ -868,11 +1001,31 @@ $(document).ready(function() {
               legend: {
                 show: false
               },
-              "donut": {
-                "title": "El Salvador (2015)",
-                "width": 20,
-                "label":{
-                  show: false
+              "tooltip": {
+                "grouped": false
+              },
+              axis: {
+                "x": {
+                  "type": "category",
+                  "categories": ["El Salvador (2015)"]
+                },
+                y: {
+                  show: false,
+                  max:529,
+                  min:42
+                }
+              },
+              legend: {
+                show: false
+              },
+              bar: {
+                 width:15
+              },
+              "interaction": {
+                "inputType": {
+                  "touch": {
+                    "preventDefault": true
+                  }
                 }
               },
               "bindto": "#chart_c10"
@@ -880,15 +1033,13 @@ $(document).ready(function() {
 
             var chart_c11 = bb.generate({
               size: {
-                // width: 280
-                // height: 300
               },
             "data": {
               "columns": [
                    ["Explotación sexual", 10]
               ],
               order : "asc",
-              "type": "donut",
+              "type": "bar",
               colors: {
                 "Explotación sexual": "#E05D5F",
                 "Mano de obra": "#FE9D65",
@@ -899,11 +1050,31 @@ $(document).ready(function() {
             legend: {
               show: false
             },
-            "donut": {
-              "title": "Bárbados (2013)",
-              "width": 20,
-              "label":{
-                show: false
+            "tooltip": {
+              "grouped": false
+            },
+            axis: {
+              "x": {
+                "type": "category",
+                "categories": ["Bárbados (2013)"]
+              },
+              y: {
+                show: false,
+                max:529,
+                min:42
+              }
+            },
+            legend: {
+              show: false
+            },
+            bar: {
+               width:15
+            },
+            "interaction": {
+              "inputType": {
+                "touch": {
+                  "preventDefault": true
+                }
               }
             },
             "bindto": "#chart_c11"
@@ -911,8 +1082,6 @@ $(document).ready(function() {
 
             var chart_c12 = bb.generate({
               size: {
-                // width: 300
-                // height: 200
               },
               "data": {
                 "columns": [
@@ -920,7 +1089,7 @@ $(document).ready(function() {
                      ["Adopción ilegal", 1]
                 ],
                 order : "asc",
-                "type": "donut",
+                "type": "bar",
                 colors: {
                   "Explotación sexual": "#E05D5F",
                   "Adopción ilegal": "#8EB5CB"
@@ -929,11 +1098,31 @@ $(document).ready(function() {
               legend: {
                 show: false
               },
-              "donut": {
-                "title": "Venezuela (2015)",
-                "width": 20,
-                "label":{
-                  show: false
+              "tooltip": {
+                "grouped": false
+              },
+              axis: {
+                "x": {
+                  "type": "category",
+                  "categories": ["Venezuela (2015)"]
+                },
+                y: {
+                  show: false,
+                  max:529,
+                  min:42
+                }
+              },
+              legend: {
+                show: false
+              },
+              bar: {
+                 width:15
+              },
+              "interaction": {
+                "inputType": {
+                  "touch": {
+                    "preventDefault": true
+                  }
                 }
               },
               "bindto": "#chart_c12"
@@ -941,8 +1130,6 @@ $(document).ready(function() {
 
             var chart_c13 = bb.generate({
               size: {
-                // width: 280
-                // height: 200
               },
               "data": {
                 "columns": [
@@ -951,7 +1138,7 @@ $(document).ready(function() {
                      ["Otros fines", 3]
                 ],
                 order : "asc",
-                "type": "donut",
+                "type": "bar",
                 colors: {
                   "Explotación sexual": "#E05D5F",
                   "Mano de obra": "#FE9D65",
@@ -961,11 +1148,31 @@ $(document).ready(function() {
               legend: {
                 show: false
               },
-              "donut": {
-                "title": "Cuba (2014)",
-                "width": 20,
-                "label":{
-                  show: false
+              "tooltip": {
+                "grouped": false
+              },
+              axis: {
+                "x": {
+                  "type": "category",
+                  "categories": ["Cuba (2014)"]
+                },
+                y: {
+                  show: false,
+                  max:529,
+                  min:42
+                }
+              },
+              legend: {
+                show: false
+              },
+              bar: {
+                 width:15
+              },
+              "interaction": {
+                "inputType": {
+                  "touch": {
+                    "preventDefault": true
+                  }
                 }
               },
               "bindto": "#chart_c13"
@@ -973,8 +1180,6 @@ $(document).ready(function() {
 
             var chart_c14 = bb.generate({
               size: {
-                // width: 280
-                // height: 200
               },
               "data": {
                 "columns": [
@@ -982,7 +1187,7 @@ $(document).ready(function() {
                      ["Mano de obra", 5]
                 ],
                 order : "asc",
-                "type": "donut",
+                "type": "bar",
                 colors: {
                   "Explotación sexual": "#E05D5F",
                   "Mano de obra": "#FE9D65"
@@ -991,11 +1196,31 @@ $(document).ready(function() {
               legend: {
                 show: false
               },
-              "donut": {
-                "title": "Uruguay (2014)",
-                "width": 20,
-                "label":{
-                  show: false
+              "tooltip": {
+                "grouped": false
+              },
+              axis: {
+                "x": {
+                  "type": "category",
+                  "categories": ["Uruguay (2014)"]
+                },
+                y: {
+                  show: false,
+                  max:529,
+                  min:42
+                }
+              },
+              legend: {
+                show: false
+              },
+              bar: {
+                 width:15
+              },
+              "interaction": {
+                "inputType": {
+                  "touch": {
+                    "preventDefault": true
+                  }
                 }
               },
               "bindto": "#chart_c14"
@@ -1003,8 +1228,6 @@ $(document).ready(function() {
 
             var chart_c15 = bb.generate({
               size: {
-                // width: 350
-                // height: 300
               },
               "data": {
                 "columns": [
@@ -1013,7 +1236,7 @@ $(document).ready(function() {
                      ["Matrimonio forzado", 7]
                 ],
                 order : "asc",
-                "type": "donut",
+                "type": "bar",
                 colors: {
                   "Explotación sexual": "#E05D5F",
                   "Mano de obra": "#FE9D65",
@@ -1023,11 +1246,31 @@ $(document).ready(function() {
               legend: {
                 show: false
               },
-              "donut": {
-                "title": "Colombia (2015)",
-                "width": 20,
-                "label":{
-                  show: false
+              "tooltip": {
+                "grouped": false
+              },
+              axis: {
+                "x": {
+                  "type": "category",
+                  "categories": ["Colombia (2015)"]
+                },
+                y: {
+                  show: false,
+                  max:529,
+                  min:42
+                }
+              },
+              legend: {
+                show: false
+              },
+              bar: {
+                 width:15
+              },
+              "interaction": {
+                "inputType": {
+                  "touch": {
+                    "preventDefault": true
+                  }
                 }
               },
               "bindto": "#chart_c15"
@@ -1045,7 +1288,7 @@ $(document).ready(function() {
                      ["Otros fines", 29]
                 ],
                 order : "asc",
-                "type": "donut",
+                "type": "bar",
                 colors: {
                   "Explotación sexual": "#E05D5F",
                   "Tráfico de órganos": "#8DD1A9",
@@ -1057,11 +1300,31 @@ $(document).ready(function() {
               legend: {
                 show: false
               },
-              "donut": {
-                "title": "Bolivia (2014)",
-                "width": 20,
-                "label":{
-                  show: false
+              "tooltip": {
+                "grouped": false
+              },
+              axis: {
+                "x": {
+                  "type": "category",
+                  "categories": ["Bolivia (2014)"]
+                },
+                y: {
+                  show: false,
+                  max:529,
+                  min:42
+                }
+              },
+              legend: {
+                show: false
+              },
+              bar: {
+                 width:15
+              },
+              "interaction": {
+                "inputType": {
+                  "touch": {
+                    "preventDefault": true
+                  }
                 }
               },
               "bindto": "#chart_c16"
@@ -1077,7 +1340,7 @@ $(document).ready(function() {
                      ["Servidumbre doméstica", 1]
                 ],
                 order : "asc",
-                "type": "donut",
+                "type": "bar",
                 colors: {
                   "Explotación sexual": "#E05D5F",
                   "Mano de obra": "#FE9D65",
@@ -1087,11 +1350,31 @@ $(document).ready(function() {
               legend: {
                 show: false
               },
-              "donut": {
-                "title": "Trin. y Tobago (2015)",
-                "width": 16,
-                "label":{
-                  show: false
+              "tooltip": {
+                "grouped": false
+              },
+              axis: {
+                "x": {
+                  "type": "category",
+                  "categories": ["Trin. y Tobago (2015)"]
+                },
+                y: {
+                  show: false,
+                  max:529,
+                  min:42
+                }
+              },
+              legend: {
+                show: false
+              },
+              bar: {
+                 width:15
+              },
+              "interaction": {
+                "inputType": {
+                  "touch": {
+                    "preventDefault": true
+                  }
                 }
               },
               "bindto": "#chart_c17"
@@ -1107,26 +1390,45 @@ $(document).ready(function() {
                    ["Otros fines", 25]
               ],
               order : "asc",
-              "type": "donut",
+              "type": "bar",
               colors: {
                 "Explotación sexual": "#E05D5F",
                 "Mano de obra": "#FE9D65",
                 "Otros fines": "#8EB5CB"
+              }  // min:-8
+            },
+            legend: {
+              show: false
+            },
+            "tooltip": {
+              "grouped": false
+            },
+            axis: {
+              "x": {
+                "type": "category",
+                "categories": ["Rep. Dominicana (2014)"]
+              },
+              y: {
+                show: false,
+                max:529,
+                min:42
               }
             },
             legend: {
               show: false
             },
-            "donut": {
-              "title": "Rep. Dominicana (2014)",
-              "width": 16,
-              "label":{
-                show: false
+            bar: {
+               width:15
+            },
+            "interaction": {
+              "inputType": {
+                "touch": {
+                  "preventDefault": true
+                }
               }
             },
             "bindto": "#chart_c18"
           });
-
 
             $("#search").on("keyup", buscar);
 

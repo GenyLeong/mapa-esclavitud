@@ -4,28 +4,12 @@ html{
 }
 
 /*scrollbar*/
-.scrollbar
-{
-	float: left;
-	height: 800px;
-	width: 100%;
-	background: transparent;
-	overflow-y: scroll;
-  overflow-x: hidden;
-	margin-bottom: 25px;
-}
-
-.force-overflow
-{
-	min-height: 800px;
-  padding: 1rem;
-}
-
 
 body{
   width: 100%;
   margin: 0;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 *:before, *:after {
@@ -392,6 +376,42 @@ input:-moz-placeholder {
   }
 }
 
+@media (min-width:401px){
+  #style-1::-webkit-scrollbar-track
+  {
+  	border-radius: 8px;
+  	background-color: #F5F5F5;
+  }
+
+  #style-1::-webkit-scrollbar
+  {
+  	width: 6px;
+  	background-color: #F5F5F5;
+  }
+
+  #style-1::-webkit-scrollbar-thumb
+  {
+  	border-radius: 8px;
+  	background-color: #555;
+  }
+
+  .scrollbar {
+  	float: left;
+  	height: 700px;
+  	width: 100%;
+  	background: transparent;
+  	overflow-y: scroll;
+    overflow-x: hidden;
+  	/*margin-bottom: 25px;*/
+  }
+
+  .force-overflow
+  {
+  	height: 300px;
+    padding: 1rem;
+  }
+}
+
 @media (max-width: 1300px) and (min-width: 768px){
   .container {
     width: 80%;
@@ -423,26 +443,6 @@ input:-moz-placeholder {
     width: 33.33333%;
     height: 200px;
     text-align: center;
-  }
-}
-
-@media (min-width:401px){
-  #style-1::-webkit-scrollbar-track
-  {
-  	border-radius: 8px;
-  	background-color: #F5F5F5;
-  }
-
-  #style-1::-webkit-scrollbar
-  {
-  	width: 6px;
-  	background-color: #F5F5F5;
-  }
-
-  #style-1::-webkit-scrollbar-thumb
-  {
-  	border-radius: 8px;
-  	background-color: #555;
   }
 }
 
@@ -544,8 +544,12 @@ input:-moz-placeholder {
 }
 
 @media (max-width:400px){
-  .scrollbar{
+  /*.scrollbar{
     overflow-y: auto;
+  }*/
+
+  body{
+    overflow-y: auto
   }
   .country {
       font-size: .66rem;
@@ -562,4 +566,13 @@ input:-moz-placeholder {
     font-weight: 300;
     font-size: 1rem;
   }
+  .bb-tooltip th {
+      background-color: rgba(0, 0, 0, 0.85);
+      font-size: 11px;
+  }
+
+  /*.force-overflow
+  {
+  	min-height: auto;
+  }*/
 }
